@@ -25,23 +25,23 @@ def carregar_modelo():
 
 modelo = carregar_modelo()
 
-# Inputs simulados - ajustar conforme variáveis do dataset final
+# Inputs adaptados conforme as variáveis esperadas pelo modelo
 with st.form("formulario"):
     st.subheader("Preencha os dados do candidato")
     
-    idade = st.slider("Idade", 18, 70, 30)
-    experiencia = st.selectbox("Nível de Experiência", ["Júnior", "Pleno", "Sênior", "Outros"])
-    formacao = st.selectbox("Formação Acadêmica", ["Ensino Médio", "Graduação", "Pós", "Mestrado", "Doutorado", "Outros"])
-    area_atuacao = st.selectbox("Área de Atuação", ["Desenvolvimento", "Suporte", "Infraestrutura", "Dados", "Outros"])
+    modalidade = st.selectbox("Modalidade de Trabalho", ["Presencial", "Híbrido", "Remoto"])
+    nivel_ingles = st.selectbox("Nível de Inglês", ["Básico", "Intermediário", "Avançado", "Fluente", "Não informado"])
+    comentario = st.text_area("Comentários sobre o candidato", "")
+    cv_pt = st.text_area("Resumo do currículo", "")
 
     enviado = st.form_submit_button("Verificar Match")
 
 if enviado:
     entrada = pd.DataFrame({
-        "idade": [idade],
-        "experiencia": [experiencia],
-        "formacao": [formacao],
-        "area_atuacao": [area_atuacao]
+        "modalidade": [modalidade],
+        "formacao_e_idiomas.nivel_ingles": [nivel_ingles],
+        "comentario": [comentario],
+        "cv_pt": [cv_pt]
     })
 
     prob = modelo.predict_proba(entrada)[0][1]
