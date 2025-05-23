@@ -1,6 +1,6 @@
-import streamlit as st
-import pandas as pd
 import joblib
+import pandas as pd
+import streamlit as st
 
 st.set_page_config(page_title="Match IA - Recrutamento", layout="centered")
 st.title("\U0001F916 IA para Match de Candidatos - Decision")

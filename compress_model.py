@@ -6,11 +6,11 @@ Script para comprimir o modelo RandomForest para reduzir seu tamanho.
 Usa o método de compressão do joblib para otimizar o tamanho do arquivo.
 """
 
-import joblib
 import os
 import time
-from sklearn.ensemble import RandomForestClassifier
-import pandas as pd
+
+import joblib
+
 
 def main():
     print("Iniciando compressão do modelo...")
