@@ -1,0 +1,42 @@
+# Arquivos e pastas de ambientes virtuais
+venv/
+.env
+*.env
+
+# Jupyter e IPython
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.py~
+
+# Arquivos de modelo e serialização
+# Exceção para o modelo principal da aplicação
+data/raw/*.pkl
+data/processed/*.pkl
+models/*.pkl
+!app/modelo_randomforest_match.pkl
+
+# Arquivos de dados grandes
+data/raw/*.csv
+data/raw/*.xlsx
+data/raw/*.json
+data/processed/*.csv
+data/processed/*.xlsx
+data/processed/*.json
+
+# Streamlit
+.streamlit/
+
+# VSCode e outros editores
+.vscode/
+.idea/
+*.log
+
+# MacOS e outros temporários
+.DS_Store
+Thumbs.db

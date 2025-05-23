@@ -1,0 +1,1 @@
+app/modelo_randomforest_match.pkl filter=lfs diff=lfs merge=lfs -text
